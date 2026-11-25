@@ -1,0 +1,109 @@
+%\documentclass[12pt]{report}
+\documentclass[11pt, oneside]{book}
+% \documentclass[11pt, oneside]{book} % Este tamaño piden en tesis
+\input{Preambulo}
+\input{Modificaciones-forma-tesis}
+\begin{document}
+
+
+%%%%%%%% Preliminares %%%%%%%%%%%
+\frontmatter
+\selectlanguage{spanish}
+\input{Preliminares/Portada-tesis} % Portada
+\input{Preliminares/como_citar} % El como citar
+%\input{Preliminares/Dedicatoria} % Dedicatoria
+%\input{Preliminares/Agradecimientos} % Agradecimientos
+%\input{Preliminares/Cita-epicteto}
+
+\input{Preliminares/Resumen_and_abstract} % Resumen y Abstract 
+
+\renewcommand{\contentsname}{\begin{center} \fontsize{14pt}{16pt}\selectfont Tabla de Contenido \end{center} \vspace{-1cm}}
+\tableofcontents  % Tabla de contenidos
+\newpage 
+
+
+\renewcommand{\listtablename}{\begin{center} \fontsize{14pt}{16pt}\selectfont Lista de Tablas \end{center} \vspace{-1cm}}
+\phantomsection
+\addcontentsline{toc}{chapter}{Lista de Tablas}
+\listoftables
+\newpage
+
+\renewcommand{\listfigurename}{\begin{center} \fontsize{14pt}{16pt}\selectfont Lista de Figuras \end{center} \vspace{-1cm}}
+\phantomsection
+\addcontentsline{toc}{chapter}{Lista de Figuras}
+\listoffigures
+\newpage
+\renewcommand{\thesubsection}{\arabic{subsection})}
+
+\input{Preliminares/Introducción} % Introducción
+%\input{Preliminares/objetivos}
+
+%%%%%%%% Cuerpo de la tesis %%%%%%%%%%%
+\mainmatter
+%\input{Cuerpo_de_tesis/Capitulo1/capitulo1}
+%\input{Cuerpo_de_tesis/Capitulo2/capitulo2}
+%\input{Cuerpo_de_tesis/Capitulo3/capitulo3}
+%\input{Cuerpo_de_tesis/Capitulo4/capitulo4}
+%\input{Cuerpo_de_tesis/conclusiones} % Introducción
+\input{Cuerpo_de_tesis/recom}
+
+
+%\input{secciones-de-ayuda/Preguntas-NV}
+
+\cleardoublepage
+\bibliographystyle{IEEEtran}
+
+\chapter{Referencias bibliográficas}
+\markboth{BIBLIOGRAFÍA}{BIBLIOGRAFÍA}
+% Evitar título automático de \bibliography{}
+\patchcmd{\thebibliography}{\chapter*{\bibname}}{}{}{} % solución muy rara pero funcional
+
+% Incluir bibliografía sin título duplicado
+\nocite{*}
+\bibliography{biblio}
+
+
+
+
+%%%%%%%% Anexos %%%%%%%%%%%
+\backmatter
+
+% --- Portada de Anexos (sí va al TOC) ---
+\chapter*{Anexos}
+\addcontentsline{toc}{chapter}{Anexos}
+\vspace*{1cm}
+
+\begin{center}
+\begin{tabular}{p{0.9\textwidth}}
+Anexo 1: Puntos de Lagrange \dotfill \pageref{anexo:A} \\
+Anexo 2: Códigos en Python \dotfill \pageref{anexo:B} \\
+\end{tabular}
+\end{center}
+\newpage
+
+% --- Anexos individuales ---
+\hypersetup{pageanchor=false}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Desactivar que figuras y tablas se añadan a las listas globales
+\captionsetup{list=no}
+
+% Configurar numeración romana continua para TODOS los anexos
+%\renewcommand{\thefigure}{\Roman{figure}}
+%\renewcommand{\thetable}{\Roman{table}}
+%\setcounter{figure}{0}   % Reinicia UNA SOLA VEZ al empezar anexos
+%\setcounter{table}{0}    % Reinicia UNA SOLA VEZ al empezar anexos
+
+\chapter*{Anexo 1: Puntos de Lagrange}\phantomsection\label{anexo:A}
+\input{Cuerpo_de_tesis/Anexos/AnexoA}
+
+%\chapter*{Anexo 2: Demostración de la Función Flujo Relativo}\label{anexo:B}
+%\input{Cuerpo_de_tesis/Anexos/AnexoB}
+
+\chapter*{Anexo 2: Códigos en Python}\phantomsection\label{anexo:B}
+\input{Cuerpo_de_tesis/Anexos/AnexoB}
+
+
+
+\end{document}

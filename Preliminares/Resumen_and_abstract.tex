@@ -1,0 +1,39 @@
+
+\newpage 
+\phantomsection % Marca la posición exacta de la referencia
+\addcontentsline{toc}{section}{Resumen}
+\begin{resumen}
+
+
+\noindent La física de altas energías, particularmente en el contexto del High-Luminosity Large Hadron Collider (HL-LHC), enfrenta desafíos computacionales sin precedentes en la reconstrucción de eventos. El aumento de luminosidad y del \textit{pileup} generan una explosión combinatoria en la identificación y agrupación de señales (\textit{hits}) de los detectores, poniendo a prueba las capacidades de los algoritmos clásicos. Esta limitación compromete la eficiencia y precisión de la reconstrucción, motivando la exploración de nuevos enfoques computacionales.
+
+En este contexto, la presente tesis investiga la computación cuántica y el \textit{quantum machine learning} (QML) para la reconstrucción de trayectorias de partículas, mediante métodos de kernel cuántico, particularmente la arquitectura \textit{Neural Quantum Kernel} (NQK). Se implementa un flujo de preprocesamiento que construye \textit{tripletes} de \textit{hits} mediante cortes geométricos físicamente motivados, incorporando variantes de reducción de dimensionalidad con PCA. Sobre estos datos se desarrolla un modelo NQK basado en una red neuronal cuántica (QNN) de un qubit, con \textit{data re-uploading} y una función de costo basada en fidelidad. A partir de esta red se define un  \textit{embedding} cuántico 1-to-3, utilizado por un clasificador SVM. Se evalúan configuraciones con dimensiones de entrada \(p=9\), \(p=3\) y \(p=2\).
+
+Los resultados muestran que la combinación de PCA y NQK mejora significativamente el rendimiento. En particular, para \(p=3\), se alcanza una precisión de 86.69 $\%$, una pureza de 88.40 $\%$ y una eficiencia de 86.26 $\%$. Estos resultados sugieren que los \textit{neural quantum kernels}, combinados con técnicas clásicas de reducción de dimensionalidad, constituyen una alternativa prometedora para una reconstrucción eficiente de trayectorias en física de altas energías.
+
+\vspace{0.5cm}
+\noindent \keywords{Aprendizaje automático cuántico, Kernels cuánticos neuronales, Reconstrucción de trayectorias de partículas, Física de altas energías.}
+
+\end{resumen}
+
+
+\newpage
+
+\selectlanguage{english}
+\phantomsection % Marca la posición exacta de la referencia
+\addcontentsline{toc}{section}{Abstract}
+\begin{abstract}
+
+\noindent High-energy physics, particularly in the context of the High-Luminosity Large Hadron Collider (HL-LHC), faces unprecedented computational challenges in event reconstruction. The increase in luminosity and pileup leads to a combinatorial explosion in the identification and grouping of detector signals (hits), challenging the capabilities of current classical algorithms. This limitation compromises reconstruction efficiency and accuracy, motivating the exploration of new computational approaches.
+
+In this context, this thesis investigates quantum computing and quantum machine learning (QML) for particle track reconstruction through quantum kernel methods, particularly the Neural Quantum Kernel (NQK) architecture. A preprocessing pipeline is implemented to construct hit triplets using physically motivated geometric cuts, incorporating dimensionality reduction variants based on Principal Component Analysis (PCA). The NQK model is built upon a single-qubit quantum neural network (QNN) with data re-uploading and a fidelity-based cost function. A 1-to-3 quantum embedding is defined from the QNN and employed by a Support Vector Machine (SVM) classifier. Configurations with input dimensions of (p=9), (p=3), and (p=2) are evaluated.
+
+The results show that combining PCA with NQK significantly improves performance. In particular, for (p=3), the model achieves an accuracy of 86.69$\%$, a purity of 88.40$\%$, and an efficiency of 86.26$\%$. These findings suggest that neural quantum kernels, combined with classical dimensionality reduction techniques, offer a promising approach to efficient particle track reconstruction in high-energy physics.
+
+\vspace{0.5cm}
+\noindent \keywordsenglish{Quantum Machine Learning, Neural Quantum Kernels, Particle Track Reconstruction, High-Energy Physics.}
+\end{abstract}
+
+% Regresamos al español para el resto del documento
+\selectlanguage{spanish}
+\newpage

@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{Resumen}{iii}{section*.4}%
+\babel@toc {english}{}\relax 
+\contentsline {section}{Abstract}{iv}{section*.5}%
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Lista de Tablas}{vi}{section*.6}%
+\contentsline {chapter}{Lista de Figuras}{vii}{section*.7}%
+\contentsline {chapter}{Introducción}{viii}{chapter*.8}%
+\contentsline {chapter}{\numberline {I.}Recomendaciones}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {II.}Referencias bibliográficas}{2}{chapter.2}%
+\contentsline {chapter}{Anexos}{11}{chapter*.9}%

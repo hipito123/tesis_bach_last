@@ -1,0 +1,120 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\begin{comment} % TIPOGRAFICA  
+%%%%%%%%%%%% Para ver si lo puedes eliminar porque queda demasidado feo con estas caracteristicas %%%%%%%%%
+% Tipo de letra: Arial.  
+\usepackage{helvet}  % Usa Helvetica (similar a Arial)
+\renewcommand{\familydefault}{\sfdefault}  % Configura la fuente sans-serif por defecto
+
+% Tamaño de letra de título de capítulo: 14 puntos. 
+\usepackage{titlesec}
+\titleformat{\chapter}{ \centering \fontsize{14}{16}\bfseries}{\Roman{chapter}.}{1em}{}
+
+\titleformat{\section}{\fontsize{11}{13}\bfseries}{\makebox[0.3cm][r]{\thesection}}{1em}{}
+
+% Configurar sangría de subapartados (Tercer nivel, Números arábigos con sangría 0.8 cm)
+\titleformat{\subsection}
+  {\bfseries}{\makebox[0.8cm][r]{\thesubsection}~}{0pt}{}
+
+
+
+
+
+%Tamaño de letra de texto dentro de tablas y figuras: 9 puntos.
+\captionsetup[figure]{font={small,stretch=1.5}}  % small es 9pt
+\captionsetup[table]{font={small,stretch=1.5}}
+%\end{comment}
+
+% Tablas y figuras: 1.50 cm. o 0.59 pulgadas. 
+\captionsetup{font={stretch=1.5}}
+
+%\setlength{\floatsep}{1.5cm}
+
+\renewcommand{\thechapter}{\Roman{chapter}.}
+\renewcommand{\thesection}{\Alph{section}.}
+\renewcommand{\thesubsection}{\arabic{subsection}} % Subapartados en números arábigos (1, 2, 3...)
+%\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+
+
+\renewcommand{\footnotesize}{\fontsize{9pt}{10pt}\selectfont}  % Tamaño de fuente en notas
+%\end{comment}
+
+
+
+%\begin{comment} % INTERLINEADO
+% El texto principal es a doble espacio: 2.00 cm o 0.78 pulgadas. 
+
+\doublespacing  % Aplica doble espaciado en todo el documento
+
+% Ecuaciones, desde 1.00 cm. hasta 3.00 cm. dependiendo de la  diagramación
+\setlength{\abovedisplayskip}{1.5cm}  % Espacio antes de ecuaciones
+\setlength{\belowdisplayskip}{1.5cm}  % Espacio después de ecuaciones
+% \setlength{\jot}{1cm}  % Espaciado entre ecuaciones en align
+
+
+
+% Notas de páginas: 1.00 cm. o 0.39 pulgadas. 
+\setlength{\skip\footins}{1cm}  % Ajusta la distancia entre el texto y las notas al pie
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% numeración arabiga continua
+ \counterwithout{equation}{chapter}
+ \renewcommand{\theequation}{\arabic{equation}} % Asegura numeración en arábigos
+\setcounter{equation}{0} % Inicia la numeración desde 1
+
+
+
+% Evitar que las ecuaciones se reinicien en cada capítulo
+
+
+% Evitar que la numeración se reinicie por capítulo
+\counterwithout{table}{chapter}
+\counterwithout{figure}{chapter}
+
+
+%%%%%% Numeración de tablas en números romanos %%
+\renewcommand{\thetable}{\Roman{table}} % Usa números romanos para tablas
+% Configurar el formato de las tablas para IEEE
+\captionsetup[table]{labelfont=normalfont, labelsep=newline}
+%%%%%% Numeración de figuras en números romanos %%
+\captionsetup[figure]{labelsep=period} % Para cambiar ":" por "."
+\renewcommand{\thefigure}{\Roman{figure}}
+
+
+
+%%%%%%%%%% Separación entre numero y texto en la listas %%%%%%%%%%%%%
+\setlength{\cftfignumwidth}{7.9em}  % Ajusta la anchura del número
+\setlength{\cfttabnumwidth}{6.5em}  % Ajusta la separación en la lista de tablas
+% Cambiar numeración a romanos SOLO en \listoffigures y \listoftables
+
+% Corregir la numeración en la lista de figuras (usar \cftfigaftersnum)
+\renewcommand{\cftfigpresnum}{FIGURA\;} 
+\renewcommand{\cftfigaftersnum}{\Roman{figure}.}
+
+\renewcommand{\cfttabpresnum}{TABLA\;}
+\renewcommand{\cfttabaftersnum}{\Roman{table}:}
+
+
+
+% Sangría en la tabla de contenido
+\setlength{\cftchapnumwidth}{0.85cm}
+\setlength{\cftsecnumwidth}{0.6cm}     % Espacio reservado para el número de la sección
+\setlength{\cftsecindent}{0.3cm} 
+\setlength{\cftsubsecindent}{0.8cm} % Sangría de 40pt en subsecciones
+
+
+\usepackage{titlesec}
+\titleformat{\section}
+  {\bfseries\itshape}
+  {\thesection}
+  {1em}
+  {}
+\titleformat{\subsection}
+  {\bfseries\itshape}
+  {\thesubsection}
+  {1em}
+  {}

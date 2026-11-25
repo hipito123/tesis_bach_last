@@ -1,0 +1,178 @@
+\usepackage[utf8]{inputenc} % para cargar caracteres no anglosajones 
+\usepackage[spanish,english,es-tabla]{babel}
+\selectlanguage{spanish}
+% Alias para IEEEtran.bst cuando los campos de biblio.bib tienen language = {en}
+\makeatletter
+\@ifundefined{l@en}{\let\l@en\l@english}{}
+\makeatother
+\usepackage{datetime} % Opcional, para mejorar el formato de la fecha
+\usepackage[lmargin=3cm,rmargin=2.54cm,top=2.54cm,bottom=2.54cm]{geometry}
+
+\usepackage{etoolbox}
+%%%%%% PARA UNA FUENTE QUE SE PARECE ARIAL %%%%
+%\usepackage[scaled]{helvet}
+%\renewcommand\familydefault{\sfdefault}  % Configura Helvetica como la fuente por defecto
+
+\title{Redacción - Tesis - licenciatura}
+\author{Juan Alonso Alcalá Lujan}
+\date{\today}
+
+% Paquetes simples y estandar 
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\usepackage{bm,amsmath,amssymb,graphicx,amsfonts,amsthm}
+\usepackage{fancybox} %este para variar las cajas 
+\usepackage{float}
+\usepackage{array}
+\usepackage{comment} %%% Para comentar secciones largas
+%\usepackage[justification=justified]{caption} 
+\usepackage[justification=centering, singlelinecheck=false]{caption}
+% Luego, reconfigura solo las figuras a justificado
+%\captionsetup[figure]{justification=justified}
+\usepackage{subcaption} %% para las subfiguras
+\usepackage{url}
+%\usepackage[numbers]{natbib} % Para usar citas narrativas y paréntetica
+\usepackage{lipsum} % Para genera texto random
+\usepackage[rgb]{xcolor} % Permite definir colores personalizados en formato RGB
+\usepackage{booktabs} %%%%%%% Para las tablas que he exportado en python y Para tablas sin líneas verticales
+\usepackage{multicol}
+\usepackage{setspace}
+
+% Compatibilidad hacia atrás con tocloft v3.0c en versiones de LaTeX kernel previas a 2024
+\providecommand{\UseTaggingSocket}[2][]{}
+\providecommand{\SuspendTagging}[1]{}
+\providecommand{\ResumeTagging}[1]{}
+\usepackage{tocloft}
+\usepackage{chngcntr} % Permite cambiar el comportamiento de numeración
+\usepackage{appendix}
+% Redefiniciones
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\renewcommand{\contentsname}{Tabla de contenidos}
+\renewcommand{\bibname}{Bibliografía}
+\renewcommand{\indexname}{Índice de Palabras}
+\renewcommand{\figurename}{Imagen}
+\renewcommand{\tablename}{TABLA}
+\renewcommand{\partname}{Parte}
+\renewcommand{\chaptername}{Capítulo}
+\renewcommand{\appendixname}{Anexos}
+\addto\captionsspanish{\renewcommand{\figurename}{FIGURA}}% Cambia "Figura" por "Imagen
+\addto\captionsspanish{\renewcommand{\tablename}{TABLA}}
+
+% Definiciones de abreviaturas de revistas astronómicas (usadas en citas BibTeX de NASA/ADS)
+\providecommand{\apj}{The Astrophysical Journal}
+\providecommand{\apjl}{The Astrophysical Journal Letters}
+\providecommand{\apjs}{The Astrophysical Journal Supplement Series}
+\providecommand{\aj}{The Astronomical Journal}
+\providecommand{\aap}{Astronomy \& Astrophysics}
+\providecommand{\mnras}{Monthly Notices of the Royal Astronomical Society}
+\providecommand{\pasp}{Publications of the Astronomical Society of the Pacific}
+\providecommand{\pasj}{Publications of the Astronomical Society of Japan}
+\providecommand{\nat}{Nature}
+\providecommand{\sci}{Science}
+\providecommand{\araa}{Annual Review of Astronomy and Astrophysics}
+
+% Paquetes rebuscados 
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+%%%%%%%%%%%% Para el abstract %%%%%%%%%%%%%%%%%%
+\newenvironment{resumen}%
+{\null\vfill\begin{center}%
+\bfseries \fontsize{14}{16}\selectfont Resumen \end{center}}%
+{\vfill\null}
+
+\newenvironment{abstract}%
+{\null\vfill\begin{center}%
+\bfseries \fontsize{14}{16}\selectfont Abstract \end{center}}%
+{\vfill\null}
+
+
+
+
+% COMANDOS 
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\providecommand{\keywords}[1] % Para palabras clave
+{
+  \small	
+  \textbf{\textit{Palabras Clave---}} #1
+}
+
+
+
+%%%%%%%%% Cosas que no sé para que sirven %%%%%%%%%%%%%
+\usepackage{units}
+%\usepackage{parskip}
+
+
+\newcommand{\figref}[1]{Fig. \ref{#1}} % Para modificar la forma como se escribe en la imagenes .
+%\usepackage[linktocpage=true,pagebackref = true]{hyperref} 
+\usepackage[linktocpage=true]{hyperref} % linktocpage Hace que los números de página en lugar del texto se vinculen en la Tabla de contenido. , %el pagebackref me servira para linkear cosas en citas de bibliografia 
+
+
+\usepackage{orcidlink}
+\definecolor{mycitecolor}{rgb}{0.0, 0.0, 1.0} % Ajusta estos valores para intensificar el color
+
+\hypersetup{ 
+    colorlinks=true,
+    linkcolor=black, % red
+    filecolor=black, % magenta      
+    urlcolor=black, % red
+    citecolor=black, %mycitecolor        % Color para citas de bibliografía
+} %este comando de huperref me sirve para que los limks tengan diferentes colores , depende de lo que necesito
+
+\usepackage{tikz}
+\usepackage{empheq}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{braket} %%%% Paquete que me sirve para dibujar brakets a mi antojo y facilitar cosas
+% Para la forma de escribir bra-kets mirar:
+% http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/physics/physics.pdf
+
+\usepackage{wasysym}
+\usepackage{multirow}
+\usepackage{booktabs} % Opcional, mejora la tabla
+
+\renewcommand{\qed}{\hfill$\blacksquare$}
+
+\usepackage{mathrsfs}
+\usepackage[makeroom]{cancel}
+\usepackage{setspace} % Para establecer espacios específicos
+
+% Keywords comando creado para las palabras clave
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Palabras Clave---}} #1
+}
+
+
+% Keywords comando creado para las palabras clave
+\providecommand{\keywordsenglish}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% SANGRÍA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{indentfirst}  % Asegura sangría en el primer párrafo de cada sección
+\setlength{\parindent}{1.27cm}  % Define la sangría de todos los párrafos
+\linespread{1.25} % Asemeja el interlineado 1.5 de Word
+
+  
+%%%%%%%%%%% Para controlar la numeración de pagina %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  % Limpiar encabezados y pies de página
+\fancyfoot[C]{} % Borra numeración central
+\fancyfoot[R]{\thepage}  % Coloca el número de página en la esquina inferior derecha
+
+% Por defecto, LaTeX usa el estilo plain en las primeras páginas de cada capítulo. Con \fancypagestyle{plain}{...} estamos reconfigurándolo para que las páginas de inicio de capítulo sigan el mismo formato que el resto del documento.
+\fancypagestyle{plain}{
+    \fancyhf{} 
+    \fancyfoot[R]{\thepage} % Número de página en la esquina inferior derecha
+}
+\renewcommand{\headrulewidth}{0pt}  % Elimina la línea en el encabezado
+\renewcommand{\footrulewidth}{0pt}  % Elimina la línea en el pie de página
+

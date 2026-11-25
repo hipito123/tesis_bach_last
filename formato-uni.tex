@@ -1,0 +1,370 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks]{hyperref}
+\usepackage[left=0.5in,top=1in,right=1in,bottom=1in]{geometry} % Document margins
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{hhline}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{booktabs} % Para tablas con mejor diseño
+\usepackage{tabularx} % Para mejor control del ancho de columnas
+\usepackage{longtable}
+
+\renewcommand{\arraystretch}{1.5}
+
+
+\usepackage{xcolor}    % Permite colores
+\usepackage{pifont}    % Permite símbolos como ✓
+
+% Definir un check verde y una X roja
+\newcommand{\greencheck}{{\color{green}\ding{51}}} % Símbolo ✓ en verde
+\newcommand{\redx}{{\color{red}\ding{55}}}         % Símbolo ✗ en rojo
+
+\title{Investigación para mejorar investigación}
+\author{Juan Alonso Alcalá Luján}
+\date{\today}
+
+\begin{document}
+
+
+
+
+\chapter*{Formato UNI-Tesis}
+
+\section*{\color{red}Formato de numeración de páginas (pautas UNI) \greencheck}
+
+
+\begin{longtable}{|p{4cm}|p{7cm}|p{7cm}|}
+    \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Ubicación de numeración
+    \RaggedRight \textbf{Ubicación de numeración} \greencheck & \textbf{Esquina inferior derecha} & Aplicable a todas las páginas numeradas.\\ \hline
+
+    % Portada
+    \textbf{Portada} \greencheck & \textbf{No lleva numeración impresa, pero se cuenta como "i"} & La portada se considera la página 1 del documento, aunque no se imprime el número. \\ \hline
+
+    % Primera página después de la portada
+    \textbf{Primera página después de la portada} \greencheck & \textbf{Numerada como "ii"} en romanos minúsculos & La numeración \textbf{visible comienza en "ii"}. \\ \hline
+
+    % Preliminares
+    \textbf{Preliminares} (Dedicatoria, Agradecimientos, Resumen, Abstract, Introducción, Tabla de Contenido, Listas) \greencheck & \textbf{Números romanos en minúscula} (\textit{ii, iii, iv, v}...) & Se continúa la numeración romana en minúscula en todas las secciones preliminares.  \\ \hline
+
+    % Cuerpo de la tesis
+    \textbf{Cuerpo de la tesis} (Capítulos, Conclusiones y Recomendaciones) \greencheck & \textbf{Números arábigos a partir de 1} (1, 2, 3...) & La numeración \textbf{se reinicia en "1"} en el primer capítulo. \\ \hline
+
+    % Anexos
+    \textbf{Anexos} & \textbf{Números arábigos, reiniciando desde 1} & Se mantiene la ubicación en la esquina inferior derecha. \\ \hline
+
+\end{longtable}
+
+\section*{\color{red}Formato Numeración de Capítulos y Subcapítulos en la UNI (estilo IEEE) \greencheck}
+
+No hay menciones exactas en las reglas UNI sobre la numeración de capítulos y subcapítulos. Sin embargo, hay un ejemplo con el formato esperado por el ejemplo que se encuentra en la resolución rectoral
+
+
+\begin{longtable}{|l|c|l|}
+    \hline
+    \textbf{Nivel} & \textbf{Tipo de numeración} & \textbf{Ejemplo} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Nivel} & \textbf{Tipo de numeración} & \textbf{Ejemplo} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Capítulos
+    \textbf{Capítulos} & \textbf{Números romanos} (I, II, III...) & I. INTRODUCCIÓN \\ \hline
+
+    % Subcapítulos
+    \textbf{Subcapítulos} & \textbf{Letras mayúsculas} (A, B, C...) & A. GENERALIDADES \\ \hline
+
+    % Secciones
+    \textbf{Secciones} & \textbf{Números arábigos entre paréntesis} (1), (2), (3)... & (1) Definición del problema \\ \hline
+
+    % Subsecciones
+    \textbf{Subsecciones} & \textbf{Letras minúsculas entre paréntesis} (a), (b), (c)... & (a) Métodos existentes \\ \hline
+\end{longtable}
+
+\section*{\color{red}Formato de tablas y figuras en la UNI (estilo IEEE)}
+
+\begin{longtable}{|p{5cm}|p{5cm}|p{8cm}|}
+    \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Numeración de Tablas
+    \textbf{Numeración de Tablas} \greencheck & \textbf{Números romanos} (TABLA I, II, III...) & La numeración es continua en todo el documento. ({\color{blue} NO lo dice la resolución de la UNI Pero se sobreentiende}) \\ \hline
+
+    % Ubicación del número de Tabla
+    \textbf{Ubicación del número de Tabla} \greencheck & \textbf{Encima} de la tabla, \textbf{centrado} y en mayúscula & Ejemplo: \textbf{TABLA I}. \\ \hline
+
+    % Título de la Tabla
+    \textbf{Título de la Tabla} \greencheck & Debajo del número de la tabla, alineado al \textbf{centro} & Separado del número de tabla por un espacio simple (1.0 línea). \\ \hline
+
+    % Cuerpo de la Tabla
+    \textbf{Cuerpo de la Tabla} \greencheck & \textbf{Interlineado de 1.5 líneas}, sin líneas verticales & Se recomienda seguir el formato IEEE. \\ \hline
+
+    % Notas en Tablas
+    \textbf{Notas en Tablas} \greencheck & Se colocan debajo de la tabla & Solo si es necesario para aclaraciones o fuentes. \\ \hline
+
+    % Numeración de Figuras
+    \textbf{Numeración de Figuras}  & \textbf{Números arábigos} (Figura 1, 2, 3...) ({\color{blue} El estilo triple IEEE sugiere usar arábigos pero la UNI indica implicitamente en romanos, preguntar !!!}) & La numeración es continua en todo el documento. ({\color{blue} NO lo dice la resolución de la UNI pero se sobreentiende}) \\ \hline
+
+    % Ubicación del número de Figura
+    \textbf{Ubicación del número de Figura} \greencheck & \textbf{Debajo} de la figura, en \textbf{mayúscula y justificado} & Ejemplo: \textbf{FIGURA 1}. \\ \hline
+
+    % Título de la Figura
+    \textbf{Título de la Figura} \greencheck & \textbf{Justificado}, en la misma línea del número de figura & Ejemplo: \textbf{FIGURA 1. Esquema de sensores.} \\ \hline
+
+    % Leyendas y Notas
+    \textbf{Leyendas y Notas} & Deben colocarse dentro de la figura & Explican símbolos usados. \\ \hline
+
+\end{longtable}
+
+
+\section*{ \color{red} Formato de Márgenes y espaciado \greencheck}
+
+\begin{longtable}{|l|p{7cm}|p{8cm}|}
+    \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Márgenes
+    \textbf{Márgenes} & \textbf{Superior: 2.54 cm, Inferior: 2.54 cm, Izquierdo: 3.00 cm, Derecho: 2.54 cm} & Se debe respetar en todo el documento. \\ \hline
+
+    % Tamaño de papel
+    \textbf{Tamaño de papel} & \textbf{A4 (21.00 x 29.70 cm)} & Tamaño estándar para impresión. \\ \hline
+
+    % Alineación del texto
+    \textbf{Alineación del texto} & \textbf{Justificada} en todo el documento & Excepto en la dedicatoria, que va alineada a la derecha. \\ \hline
+
+    % Interlineado
+    \textbf{Interlineado} & \textbf{Doble espacio en todo el documento} & Excepto en tablas, que deben tener interlineado de 1.5 líneas. \\ \hline
+
+    % Sangría
+    \textbf{Sangría} & \textbf{Primera línea de cada párrafo con sangría de 1.27 cm} & No aplica en Resumen, Abstract, Tablas y Figuras. \\ \hline
+
+    % Tamaño de letra
+    \textbf{Tamaño de letra} & \textbf{Título de capítulos: 14 pt, Subcapítulos: 11 pt, Texto en párrafos: 11 pt, Texto en tablas/figuras: 9 pt} & Se usa fuente Arial. \\ \hline
+
+    % Notas al pie
+    \textbf{Notas al pie} & \textbf{Interlineado doble y fuente Arial 9 pt} & Se colocan en la parte inferior de la página. \\ \hline
+
+    % Espaciado en títulos
+    \textbf{Espaciado en títulos} & \textbf{Título de capítulo: Espaciado anterior 0 pt, posterior 12 pt} & Se centra en la página. \\ \hline
+
+    % Citas en bloque
+    \textbf{Citas en bloque} & \textbf{Sangría de 1.27 cm y doble espacio} & Aplica para citas de más de 40 palabras. \\ \hline
+
+    % Ecuaciones
+    \textbf{Ecuaciones} & \textbf{Espaciado entre 1.00 cm y 3.00 cm} & Dependiendo de la diagramación. \\ \hline
+
+    % Tablas y Figuras
+    \textbf{Tablas y Figuras} & \textbf{Espaciado de 1.50 cm} & Separación entre texto y elementos gráficos. \\ \hline
+
+\end{longtable}
+
+\section*{\color{red} Formato de ecuaciones en la UNI \greencheck}
+
+\begin{longtable}{|p{5cm}|p{5cm}|p{8cm}|}
+    \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Numeración de ecuaciones
+    \textbf{Numeración de ecuaciones} & \textbf{Números arábigos entre paréntesis [(1), (2), (3), ...]} & Se coloca en el extremo derecho de la ecuación. \\ \hline
+
+    % Ubicación
+    \textbf{Ubicación} & Las ecuaciones deben estar \textbf{separadas del texto principal} & Si son largas o complejas, se deben centrar en la página. \\ \hline
+
+    % Tipo de letra
+    \textbf{Tipo de letra} & \textbf{Cursiva para variables y símbolos matemáticos} & Se deben verificar los símbolos para evitar errores. \\ \hline
+
+    % Referencia en el texto
+    \textbf{Referencia en el texto} & Siempre escribir “ecuación” sin abreviaturas & Ejemplo: “Como se observa en la \textbf{Ecuación 1}...". \\ \hline
+
+    % Espaciado
+    \textbf{Espaciado} & \textbf{Entre 1.00 cm y 3.00 cm} según la diagramación & Se recomienda seguir el estándar IEEE. \\ \hline
+
+\end{longtable}
+
+\section*{\color{red} Formato de citas y referencias en la UNI (estilo IEEE) \greencheck}
+
+\begin{longtable}{|p{4cm}|p{7cm}|p{7cm}|}
+     \hline
+    \textbf{Elemento} & \textbf{Normativa UNI (IEEE)} & \textbf{Ejemplo} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Elemento} & \textbf{Normativa UNI (IEEE)} & \textbf{Ejemplo} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Cita de texto
+    \textbf{Cita de texto} & Se coloca un número entre corchetes [ ] & "Se ha demostrado que los materiales superconductores tienen propiedades únicas [1]." \\ \hline
+
+    % Cita de autor
+    \textbf{Cita de autor} & El autor forma parte del texto y la referencia va entre corchetes & "Según el estudio de Guerra [2], el uso de nuevos algoritmos mejora el rendimiento." \\ \hline
+
+    % Cita de múltiples referencias
+    \textbf{Cita de múltiples referencias} & Se usan números entre corchetes separados por comas & "Estudios recientes [3], [4], [5] han demostrado la viabilidad de esta técnica." \\ \hline
+
+    % Orden de referencias
+    \textbf{Orden de referencias} & Se listan en el orden en que aparecen en el texto & [1] Primer documento citado, [2] Segundo documento citado, etc. \\ \hline
+
+    % Fecha de publicación
+    \textbf{Fecha de publicación} & No se menciona en el cuerpo del texto, salvo si es relevante & No se coloca año en la cita textual. \\ \hline
+
+    % Referencias en IEEE
+    \textbf{Referencias en IEEE} & Se listan en el apartado de referencias con numeración consecutiva & [1] J. Pérez, "Ciencias básicas de tratamiento de agua", Lima: Cepis, 1981. \\ \hline
+
+\end{longtable}
+
+\section*{\color{red}Formato de Tabla de Contenido en la UNI (Estilo IEEE) \greencheck}
+
+\begin{longtable}{|p{4cm}|p{7cm}|p{7cm}|}
+    \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Elemento} & \textbf{Normativa UNI} & \textbf{Observaciones} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Ubicación del título
+    \textbf{Ubicación del título} & Inmediatamente después del margen superior & No debe haber espacio adicional antes del título. \\ \hline
+
+    % Formato del título
+    \textbf{Formato del título} & \textbf{"Tabla de Contenido" en negrita, con la primera letra en mayúscula} & Tamaño de fuente: 14 pt, alineado al centro. \\ \hline
+
+    % Formato de títulos
+   \RaggedRight \textbf{Formato de títulos} & Primera letra en mayúscula, el resto en minúscula & Aplica a capítulos, secciones y subsecciones. \\ \hline
+
+    % Numeración de páginas
+   \RaggedRight \textbf{Numeración de páginas} & \textbf{Preliminares en números romanos (i, ii, iii...), cuerpo en arábigos (1, 2, 3...)} & Se inicia con "i" en preliminares y "1" en el primer capítulo. \\ \hline
+
+    % Sangría de subcapítulos
+   \RaggedRight \textbf{Sangría de subcapítulos} & \textbf{Letras mayúsculas con sangría de 0.3 cm} & Se usa para el segundo nivel de jerarquía. \\ \hline
+
+    % Sangría de subapartados
+   \RaggedRight \textbf{Sangría de subapartados} & \textbf{Números arábigos con sangría de 0.8 cm} & Se usa para el tercer nivel de jerarquía. \\ \hline
+
+    % Puntos suspensivos
+    \textbf{Puntos suspensivos} & Se colocan entre los títulos y el número de página & Deben ser automáticos en LaTeX. \\ \hline
+
+\end{longtable}
+
+\section*{\color{red}Orden y Formato de las Secciones Preliminares en la UNI \greencheck}
+
+\begin{longtable}{|c|l|p{8cm}|}
+    \hline
+    \textbf{Orden} & \textbf{Sección} & \textbf{Formato y Observaciones} \\ \hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{{\textit{(Continuación de la tabla anterior)}}} \\ \hline
+    \textbf{Orden} & \textbf{Sección} & \textbf{Formato y Observaciones} \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{\textit{Continúa en la siguiente página}}} \\ \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Portada
+    \textbf{1} & \textbf{Portada} & No lleva numeración visible, pero cuenta como "i". \\ \hline
+
+    % Dedicatoria
+    \textbf{2} & \textbf{Dedicatoria} (\textit{Opcional}) & En una página independiente, alineado a la derecha. \\ \hline
+
+    % Agradecimientos
+    \textbf{3} & \textbf{Agradecimientos} (\textit{Opcional}) & En una página independiente, alineado a la derecha. \\ \hline
+
+    % Resumen
+    \textbf{4} & \textbf{Resumen} (\textit{En español}) & Título "Resumen" centrado, 250 palabras máximo, con "Palabras clave" al final. \\ \hline
+
+    % Abstract
+    \textbf{5} & \textbf{Abstract} (\textit{En inglés}) & Versión en inglés del resumen, con "Keywords" al final. \\ \hline
+
+    % Tabla de Contenidos
+    \textbf{6} & \textbf{Tabla de Contenidos} & Título "Tabla de Contenido", en negrita y centrado. \\ \hline
+
+    % Lista de Figuras
+    \textbf{7} & \textbf{Lista de Figuras} (\textit{Si aplica}) & Con título en negrita y centrado. \\ \hline
+
+    % Lista de Tablas
+    \textbf{8} & \textbf{Lista de Tablas} (\textit{Si aplica}) & Con título en negrita y centrado. \\ \hline
+
+    % Lista de Símbolos
+    \textbf{9} & \textbf{Lista de Símbolos y Abreviaturas} (\textit{Opcional}) & Formato similar a la tabla de contenido. \\ \hline
+
+    \textbf{10} & \textbf{Introducción}  & NO pertenece al cuerpo de la tesis. \\ \hline
+
+\end{longtable}
+
+\end{document}
